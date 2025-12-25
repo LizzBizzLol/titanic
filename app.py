@@ -3,6 +3,7 @@ import pandas as pd
 
 from core import compute_dead_children_by_embarked
 
+
 st.set_page_config(page_title="Titanic — Streamlit Lab #3", layout="centered")
 
 st.title("Лабораторная №3: Streamlit + Titanic")
