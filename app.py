@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-from avava.core import compute_dead_children_by_embarked
+from titanic.core import compute_dead_children_by_embarked
 
 
 st.set_page_config(page_title="Titanic — Streamlit Lab #3", layout="centered")
