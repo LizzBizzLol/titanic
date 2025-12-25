@@ -3,11 +3,13 @@ import pandas as pd
 
 from core import compute_dead_children_by_embarked
 
-
 st.set_page_config(page_title="Titanic — Streamlit Lab #3", layout="centered")
 
 st.title("Лабораторная №3: Streamlit + Titanic")
-st.caption("Вариант №13: количество погибших детей по пунктам посадки (Embarked) при заданном максимальном возрасте.")
+st.caption(
+    "13: Количество погибших детей по пунктам посадки "
+    "при заданном максимальном возрасте."
+)
 
 # --- Загрузка данных ---
 with st.sidebar:
@@ -18,9 +20,11 @@ with st.sidebar:
 
 st.divider()
 
+
 @st.cache_data(show_spinner=False)
 def load_data(path: str) -> pd.DataFrame:
     return pd.read_csv(path)
+
 
 try:
     df = load_data(csv_path)
@@ -47,6 +51,5 @@ if result.empty:
 else:
     st.dataframe(result, use_container_width=True)
 
-    # Небольшой итог в цифрах (не обязательно, но красиво)
     total_dead_children = int(result["DeadChildrenCount"].sum())
     st.success(f"Всего погибших детей (Age ≤ {max_age}): {total_dead_children}")
