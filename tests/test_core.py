@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from core import compute_dead_children_by_embarked
+from avava.core import compute_dead_children_by_embarked
 
 
 def make_df():
